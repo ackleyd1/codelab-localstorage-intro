@@ -12,7 +12,7 @@
             <p class="twitter">#SSBM Legend | Back to Back Evolution Champion 2013-2014 | MLG Champion 2014 | Member of @Cloud9gg | Father | Patriot USA #1</p>
         </div>
         <h2>1st place at</h2>
-        <ul class="day">
+        <ul>
             <li>Zenith 2014</li>
             <li>Evo 2013</li>
             <li>MLG Anaheim 2014</li>
@@ -25,6 +25,9 @@
             var button = document.getElementById('toggle')
             if (mode === null) {
                 setMode('day')
+            }
+            else {
+                document.body.className = mode
             }
             button.onclick = function() {
                 if (mode === 'day') {
