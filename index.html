@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+    <head>
+        <title>C9 | Mang0</title>
+        <link rel="stylesheet" href="styles.css" media="screen" charset="utf-8">
+    </head>
+    <body class="day">
+        <div>
+            <img src="/C9Mang0.jpg" alt="Mang0 with a trophy"/>
+            <h1>Joseph "Mang0" Marquez</h1>
+            <a href="https://twitter.com/C9Mang0?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Twitter</a>
+            <p class="twitter">#SSBM Legend | Back to Back Evolution Champion 2013-2014 | MLG Champion 2014 | Member of @Cloud9gg | Father | Patriot USA #1</p>
+        </div>
+        <h2>1st place at</h2>
+        <ul class="day">
+            <li>Zenith 2014</li>
+            <li>Evo 2013</li>
+            <li>MLG Anaheim 2014</li>
+            <li>Evo 2014</li>
+            <li>The Big House 4</li>
+        </ul>
+        <button id="toggle" type="button" name="dayNnite">Toggle Day/Night Mode</button>
+        <script type="text/javascript">
+            var mode = localStorage.getItem('mode')
+            var button = document.getElementById('toggle')
+            if (mode === null) {
+                setMode('day')
+            }
+            button.onclick = function() {
+                if (mode === 'day') {
+                    setMode('night')
+                }
+                else {
+                    setMode('day')
+                }
+            }
+            function setMode(newMode) {
+                mode = newMode
+                localStorage.setItem('mode', newMode)
+                document.body.className = "inbetween"
+                // HACK: delays changing class name so that list color updates
+                setTimeout(function() {
+                    document.body.className = mode
+                }, 5)
+
+            }
+        </script>
+    </body>
+</html>
