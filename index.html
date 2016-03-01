@@ -20,15 +20,27 @@
             <li>The Big House 4</li>
         </ul>
         <button id="toggle" type="button" name="dayNnite">Toggle Day/Night Mode</button>
+        <p id="count"></p>
         <script type="text/javascript">
             var mode = localStorage.getItem('mode')
+            var count = localStorage.getItem('count')
             var button = document.getElementById('toggle')
+            if (count === null) {
+                var count = 1
+                localStorage.setItem('count', count)
+            }
+            else {
+                var count = parseInt(count)
+                var count = count + 1
+                localStorage.setItem('count', count)
+            }
             if (mode === null) {
                 setMode('day')
             }
             else {
                 document.body.className = mode
             }
+            document.getElementById('count').innerHTML = 'You have visited this page ' + localStorage.getItem('count') + ' time(s).'
             button.onclick = function() {
                 if (mode === 'day') {
                     setMode('night')
@@ -45,7 +57,6 @@
                 setTimeout(function() {
                     document.body.className = mode
                 }, 5)
-
             }
         </script>
     </body>
